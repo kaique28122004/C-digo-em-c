@@ -1,0 +1,134 @@
+questao 1
+
+#include <stdio.h>
+
+int not_repeat(int *const arr,int n_size){
+  for(int i =0;i<n_size;i++){
+  	for(int j=i+1;j<n_size;j++){
+      	if(arr[i]==arr[j]){
+          	for(int k =j;k<n_size-1;k++){
+              	arr[k]=arr[k+1];
+          	}
+          	n_size--;
+          	j--;
+      	}
+  	}
+  }
+  return n_size;
+}
+
+
+int main() {
+
+ int n;
+int arr[100];
+
+ printf("digite a quantidade de uma sequencia\n ");
+ scanf("%d",&n);
+
+ for(int i=0;i<n;i++){
+ 	printf("digite um numero\n");// prencher
+ 	scanf("%d",&arr[i]);
+}
+int novo_tam=not_repeat(arr,n);
+ 
+ printf("sem repetiçao\n");// mostrar
+ for(int i=0;i<novo_tam;i++){
+ 	printf("%d",arr[i]);
+ }
+
+   printf("\n");
+	return 0;
+
+
+}
+questao 2:
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+int aleatorio(){
+static int n[100];
+static int emb = 0;
+static int atual = 0;
+
+  if(!emb){
+  	for(int i=0;i<100;i++){
+      	n[i]=i;
+  	}
+  	srand(time(NULL));
+  	for(int i=99;i>0;i--){
+      	int j = rand()%(i+1);
+      	int temp=n[i];
+      	n[i]=n[j];
+      	n[j]=temp;
+  	}
+
+  	emb=1;
+  }
+if(atual>=100){
+	printf("todos retornados");
+	return -1;
+}
+	return n[atual++];
+}
+
+
+int main(){
+ int n;
+
+ for(int i=0;i<100;i++){
+ 	printf("%d", aleatorio());
+ }
+
+printf("\ntentativa extra %d\n",aleatorio());
+
+
+	return 0;
+}
+questao 3:
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+void embaralhar(int *arr, int n) {
+	srand(time(NULL));
+
+	for (int i = n - 1; i > 0; i--) {
+  	int j = rand() % (i + 1);
+ 	int temp = arr[i];
+   	arr[i] = arr[j];
+   	arr[j] = temp;
+	}
+}
+
+int main() {
+  int n;
+ printf("a quantidade de números que você quer embaralhar: ");
+  scanf("%d", &n);
+
+  int vetor[n];
+
+  for (int i = 0; i < n; i++) {
+	printf("Digite o número %d: ", i + 1);
+ 	scanf("%d", &vetor[i]);
+   }
+
+  printf("\nVetor original:\n");
+  for (int i = 0; i < n; i++) {
+   	printf("%d ", vetor[i]);
+	}
+ printf("\n");
+
+ embaralhar(vetor, n);
+
+  printf("\nVetor embaralhado:\n");
+  for (int i = 0; i < n; i++) {
+  printf("%d ", vetor[i]);
+ }
+  printf("\n");
+
+return 0;
+}
