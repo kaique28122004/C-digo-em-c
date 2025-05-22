@@ -1,0 +1,1348 @@
+/*#include <stdio.h>
+
+int main(){
+  int a,b,c;
+     printf("escrever o valor de a \n");
+       scanf("%d",&a);printf("escrever o valor de b \n");
+       scanf("%d",&b);
+     printf("escrever o valor de c\n");
+       scanf("%d",&c);
+  if(a>b){
+    printf("a e maio que b\n");
+  }else fileno_unlocked(FILE *stream)f (a<b){
+    printf("a menor que b\n");
+}
+  return 0;
+*/
+/*1. Escrever um algoritmo que lê uma data subdividida em três valores a saber, dia, mês e ano, e escreve a data
+com a mensagem "Válida" ou "Inválida". As regras para um ano ser bissexto são:
+i) deve ser divisível por 4 e 
+ii) se for um ano terminado por "00", também deve ser divisível por 400.*/
+/*#include<stdio.h>
+int main(){
+  int d,m,a;
+
+  i
+  printf("digite o dia:\n");
+    scanf("%d",&d);
+  printf("digite o mes:\n");
+    scanf("%d",&m);
+  printf("digite o ano:\n");
+    scanf("%d",&a);
+
+  if(a%4==0,a%400==0){
+    printf("e bissexto\n ");
+  
+  }else{
+       printf("nao e  bissexto\n ");
+  }
+if(d<0,d>31,m<0,m>12){
+   printf(" e data invalida\n");
+}else{
+   printf(" e data invalida\n");
+}
+  
+  return 0;
+}*/
+/*2. Um vendedor necessita de um programa que calcule o preço total devido por um cliente. Escreva um algoritmo
+que recebe o código de um produto e a quantidade comprada e calcula o preço total, sabendo-se que: (P01 –
+R$10,00, P02 – R$25,00, P03 – R$ 12,00, P04 R$ 15,00)
+#include<stdio.h>
+int main(){
+  int pt,qc,cp;
+  const int cp1=10,cp2=25,cp3=12,cp4=15;
+  printf("indique o codigo(p1,p2,p3,p4);\n");
+  scanf("%d",&cp);
+   printf("qual a quantidade comprada ?\n");
+   scanf("%d",&qc);
+pt=cp*qc;
+  if(cp<1,cp>4){
+    printf("codigo invalido\n");
+  }else{
+     printf("codigo valido\n");
+  }
+   printf("o preço total e %d\n",pt);
+  return 0;
+}*/
+/*3. Escrever um algoritmo que recebe as 3 notas obtidas por um aluno nas 3 verificações e a média dos exer// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+	printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+	printf("    |_____| ' _ ' |_____|                         \n");
+	printf("          \\__|_|__/                              \n");
+	printf("\n\n");
+
+	// declarando variaveis que serao usadas mais a frente
+	int chute;
+	int acertou;
+	int nivel;
+	int totaldetentativas;
+
+	// definindo a quantidade de pontos inicial
+	double pontos = 1000;
+	
+	// gerando um numero secreto aleatorio
+	srand(time(0));
+	int numerosecreto = rand() % 100;
+
+	// escolhendo o nivel de dificuldade
+	printf("Qual o nível de dificuldade?\n");
+	printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+	printf("Escolha: ");
+
+	scanf("%d", &nivel);
+
+	switch(nivel) {
+		case 1: 
+			totaldetentativas = 20;
+			// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+	printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+	printf("    |_____| ' _ ' |_____|                         \n");
+	printf("          \\__|_|__/                              \n");
+	printf("\n\n");
+
+	// declarando variaveis que serao usadas mais a frente
+	int chute;
+	int acertou;
+	int nivel;
+	int totaldetentativas;
+
+	// definindo a quantidade de pontos inicial
+	double pontos = 1000;
+	
+	// gerando um numero secreto aleatorio
+	srand(time(0));
+	int numerosecreto = rand() % 100;
+
+	// escolhendo o nivel de dificuldade
+	printf("Qual o nível de dificuldade?\n");
+	printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+	printf("Escolha: ");
+
+	scanf("%d", &nivel);
+
+	switch(nivel) {
+		case 1: 
+			totaldetentativas = 20;
+			break;
+		case 2:
+			totaldetentativas = 15;
+			break;
+		default:
+			totaldetentativas = 6;
+			break;
+	}
+
+	// loop principal do jogo
+	for(int i = 1; i <= totaldetentativas; i++) {
+
+		printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+		printf("Chute um número: ");
+		scanf("%d", &chute);
+
+		// tratando chute de numero negativo
+		if(chute < 0) {
+			printf("Você não pode chutar números negativos\n");
+			i--;
+			continue;
+		}
+
+		// verifica se acertou, foi maior ou menor
+		acertou = chute == numerosecreto;
+
+		if(acertou) {
+			break;
+		} else if(chute > numerosecreto) {
+			printf("\nSeu chute foi maior do que o número secreto!\n\n");
+		} else {
+			printf("\nSeu chute foi menor do que o número secreto!\n\n");
+		}
+
+		// calcula a quantidade de pontos
+		double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+		pontos = pontos - pontosperdidos;
+	}
+
+	// imprimindo mensagem de vitoria ou derrota
+	printf("\n");
+	if(acertou) {
+		printf("             OOOOOOOOOOO               \n");
+		printf("         OOOOOOOOOOOOOOOOOOO           \n");
+		printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+		printf("    OOOOOO      OOOOO      OOOOOO      \n");
+		printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+		printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+		printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+		printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+		printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+		printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+		printf("         OOOOOO         OOOOOO         \n");
+		printf("             OOOOOOOOOOOO              \n");
+		printf("\nParabéns! Você acertou!\n");
+		printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+	} else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+		printf("\nVocê perdeu! Tente novamente!\n\n");
+	}
+
+
+}break;
+		case 2:
+			totaldetentativas = 15;
+			break;
+		default:
+			totaldetentativas = 6;
+			break;
+	}
+
+	// loop principal do jogo
+	for(int i = 1; i <= totaldetentativas; i++) {
+
+		printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+		printf("Chute um número: ");
+		scanf("%d", &chute);
+
+		// tratando chute de numero negativo
+		if(chute < 0) {
+			printf("Você não pode chutar números negativos\n");
+			i--;
+			continue;
+		}
+
+		// verifica se acertou, foi maior ou menor
+		acertou = chute == numerosecreto;
+
+		if(acertou) {
+			break;
+		} else if(chute > numerosecreto) {
+			printf("\nSeu chute foi maior do que o número secreto!\n\n");
+		} else {
+			printf("\nSeu chute foi menor do que o número secreto!\n\n");
+		}
+
+		// calcula a quantidade de pontos
+		double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+		pontos = pontos - pontosperdidos;
+	}
+
+	// imprimindo mensagem de vitoria ou derrota
+	printf("\n");
+	if(acertou) {
+		printf("             OOOOOOOOOOO               \n");
+		printf("         OOOOOOOOOOOOOOOOOOO           \n");
+		printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+		printf("    OOOOOO      OOOOO      OOOOOO      \n");
+		printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+		printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+		printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+		printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+		printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+		printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+		printf("         OOOOOO         OOOOOO         \n");
+		printf("             OOOOOOOOOOOO              \n");
+		printf("\nParabéns! Você acertou!\n");
+		printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+	} else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+		printf("\nVocê perdeu! Tente novamente!\n\n");
+	}
+
+
+}cícios
+que fazem parte da avaliação. Calcular a média de aproveitamento, usando a fórmula: MA = ( 2*Nota1 + 2*Nota2
++ 2*Nota3 + ME ) / 7. Ao final o programa deve dizer se o aluno foi aprovado ou não. Um aluno é considerado
+aprovado se obtiver média >= 7,0.*/
+/*#include<stdio.h>
+int main(){
+int n1,n2,n3,me,ma;
+  printf("quanto foi a sua nota1?\n");
+  scanf("%d",&n1);
+  printf("quanto foi a sua nota2?\n");
+  scanf("%d",&n2);
+  printf("quanto foi a sua nota3?\n");
+  scanf("%d",&n3);
+   printf("quanto foi media de exercicios ?\n");
+   scanf("%d",&me);
+  ma=(2*n1+2*n2+2*n3+me)/7;
+  if(ma>=7){
+    printf("aprovado\n");
+  }else{
+    printf("reprovado\n");
+  }
+  return 0;
+}*/
+/*4. O custo ao consumidor, de um carro novo, é a soma do custo de fábrica com a percentagem do distribuidor e
+dos impostos (aplicados ao custo de fábrica). Supondo que a percentagem do distribuidor seja de 28% e os
+impostos de 45%, escrever um algoritmo para ler o custo de fábrica de um carro e escrever o  custo final ao
+Consumidor.*/
+/*#include<stdio.h>
+int main(){
+  float cc,cf,pd,ci,cd;
+  printf("custo de fabrica\n");
+  scanf("%f",&cf);
+  printf("qual a porcetagem do distribuidor ?\n");
+  scanf("%f",&pd);
+  printf("qual a porcetagem dos impostos ?\n");
+  scanf("%f",&ci);
+  cd=cf*(pd/100);
+    ci=cf*(ci/100);
+    cf=cf+cd+ci;
+    printf("o custo final e %f?\n",cf);
+  return 0;
+}*//*5. Uma revendedora de carros usados paga a seus funcionários vendedores, um salário fixo por mês, mais uma
+comissão também fixa para cada carro vendido e mais 5% do valor das vendas por ele efetuadas. Escrever um
+algoritmo que leia o número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e o valor que
+recebe por carro vendido. Calcule e escreva o salário mensal do vendedor.*/
+/*#include<stdio.h>
+int main(){
+int sf,cf,cv,vt,sm;
+printf("quantidade de carros vendidos \n");
+  scanf("%d",&cv);
+  printf("valor total de vendas\n");
+  scanf("%d",&vt);
+  printf("qual o seu salario fixo?\n");
+  scanf("%d",&sf);
+  printf("qual o valor que vc recebe por carro vendido?\n");
+  scanf("%d",&cf);
+  sm=sf+cf*cv+vt*0.05;
+  printf("o salario mensal e %d\n",sm);
+  return 0;
+}
+6. A jornada de trabalho semanal de um funcionário é de 40 horas. O funcionário que trabalhar mais de 40 horas
+receberá hora extra, cujo cálculo é o valor da hora regular com um acréscimo de 50%. Escreva um algoritmo que
+leia o número de horas trabalhadas em um mês, o salário por hora e escreva o salário total do funcionário, que
+deverá ser acrescido das horas extras caso tenham sido trabalhadas (considere que o mês possua 4 semanas
+exatas).*/
+/*include<st#dio.h>
+int main(){
+  int ht,sh,st,he,sf;
+  pr// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	pr// incluindo as bibliotecas
+#include <stdio.h>
+#inc// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+	printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+	printf("    |_____| ' _ ' |_____|                         \n");
+	printf("          \\__|_|__/                              \n");
+	printf("\n\n");
+
+	// declarando variaveis que serao usadas mais a frente
+	int chute;
+	int acertou;
+	int nivel;
+	int totaldetentativas;
+
+	// definindo a quantidade de pontos inicial
+	double pontos = 1000;
+	
+	// gerando um numero secreto aleatorio
+	srand(time(0));
+	int numerosecreto = rand() % 100;
+
+	// escolhendo o nivel de dificuldade
+	printf("Qual o nível de dificuldade?\n");
+	printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+	printf("Escolha: ");
+
+	scanf("%d", &nivel);
+
+	switch(nivel) {
+		case 1: 
+			totaldetentativas = 20;
+			break;
+		case 2:
+			totaldetentativas = 15;
+			break;
+		default:
+			totaldetentativas = 6;
+			break;
+	}
+
+	// loop principal do jogo
+	for(int i = 1; i <= totaldetentativas; i++) {
+
+		printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+		printf("Chute um número: ");
+		scanf("%d", &chute);
+
+		// tratando chute de numero negativo
+		if(chute < 0) {
+			printf("Você não pode chutar números negativos\n");
+			i--;
+			continue;
+		}
+
+		// verifica se acertou, foi maior ou menor
+		acertou = chute == numerosecreto;
+
+		if(acertou) {
+			break;
+		} else if(chute > numerosecreto) {
+			printf("\nSeu chute foi maior do que o número secreto!\n\n");
+		} else {
+			printf("\nSeu chute foi menor do que o número secreto!\n\n");
+		}
+
+		// calcula a quantidade de pontos
+		double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+		pontos = pontos - pontosperdidos;
+	}
+
+	// imprimindo mensagem de vitoria ou derrota
+	printf("\n");
+	if(acertou) {
+		printf("             OOOOOOOOOOO               \n");
+		printf("         OOOOOOOOOOOOOOOOOOO           \n");
+		printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+		printf("    OOOOOO      OOOOO      OOOOOO      \n");
+		printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+		printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+		printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+		printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+		printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+		printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+		printf("         OOOOOO         OOOOOO         \n");
+		printf("             OOOOOOOOOOOO              \n");
+		printf("\nParabéns! Você acertou!\n");
+		printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+	} else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+		printf("\nVocê perdeu! Tente novamente!\n\n");
+	}
+
+
+}lude <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+	printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+	printf("    |_____| ' _ ' |_____|                         \n");
+	printf("          \\__|_|__/                              \n");
+	printf("\n\n");
+
+	// declarando variaveis que serao usadas mais a frente
+	int chute;
+	int acertou;
+	int nivel;
+	int totaldetentativas;
+
+	// definindo a quantidade de pontos inicial
+	double pontos = 1000;
+	
+	// gerando um numero secreto aleatorio
+	srand(time(0));
+	int numerosecreto = rand() % 100;
+
+	// escolhendo o nivel de dificuldade
+	printf("Qual o nível de dificuldade?\n");
+	printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+	printf("Escolha: ");
+
+	scanf("%d", &nivel);
+
+	switch(nivel) {
+		case 1: 
+			totaldetentativas = 20;
+			break;
+		case 2:
+			totaldetentativas = 15;
+			break;
+		default:
+			totaldetentativas = 6;
+			break;
+	}
+
+	// loop principal do jogo
+	for(int i = 1; i <= totaldetentativas; i++) {
+
+		printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+		printf("Chute um número: ");
+		scanf("%d", &chute);
+
+		// tratando chute de numero negativo
+		if(chute < 0) {
+			printf("Você não pode chutar números negativos\n");
+			i--;
+			continue;
+		}
+
+		// verifica se acertou, foi maior ou menor
+		acertou = chute == numerosecreto;
+
+		if(acertou) {
+			break;
+		} else if(chute > numerosecreto) {
+			printf("\nSeu chute foi maior do que o número secreto!\n\n");
+		} else {
+			printf("\nSeu chute foi menor do que o número secreto!\n\n");
+		}
+
+		// calcula a quantidade de pontos
+		double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+		pontos = pontos - pontosperdidos;
+	}
+
+	// imprimindo mensagem de vitoria ou derrota
+	printf("\n");
+	if(acertou) {
+		printf("             OOOOOOOOOOO               \n");
+		printf("         OOOOOOOOOOOOOOOOOOO           \n");
+		printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+		printf("    OOOOOO      OOOOO      OOOOOO      \n");
+		printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+		printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+		printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+		printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+		printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+		printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+		printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+		printf("         OOOOOO         OOOOOO         \n");
+		printf("             OOOOOOOOOOOO              \n");
+		printf("\nParabéns! Você acertou!\n");
+		printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+	} else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+		printf("\nVocê perdeu! Tente novamente!\n\n");
+	}
+
+
+}intf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+	printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+	printf("    |_____| ' _ ' |_____|                         \n");
+	printf("          \\__|_|__/                              \n");
+	printf("\n\n");
+
+	// declarando variaveis que serao usadas mais a frente
+	int chute;
+	int acertou;
+	int nivel;
+	int totaldetentativas;
+
+	// definindo a quantidade de pontos inicial
+	double pontos = 1000;
+	
+	// gerando um numero secreto aleatorio
+	srand(time(0));
+	int numerosecreto = rand() % 100;
+
+	// escolhendo o nivel de dificuldade
+	printf("Qual o nível de dificuldade?\n");
+	printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+	printf("Escolha: ");
+
+	scanf("%d", &nivel);
+
+	switch(nivel) {
+		case 1: 
+			totaldetentativas = 20;
+			break;
+		// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+	pr// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+	// imprimindo cabecalho bonito do jogo
+	printf("\n\n");
+	printf("          P  /_\\  P                              \n");
+	printf("         /_\\_|_|_/_\\                            \n");
+	printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+	printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação!
+
+1) Hoje o jogo escolhe um número entre 0 e 99. Deixe o usuário
+escolher esse limite. Você precisa capturar esses dois números dele,
+e usá-los na hora de calcular o número randômico.
+*
+// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+  // imprimindo cabecalho bonito do jogo
+  printf("\n\n");
+  printf("          P  /_\\  P                              \n");
+  printf("         /_\\_|_|_/_\\                            \n");
+  printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+  printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+  printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+  printf("    |_____| ' _ ' |_____|                         \n");
+  printf("          \\__|_|__/                              \n");
+  printf("\n\n");
+
+  // declarando variaveis que serao usadas mais a frente
+  int chute;
+  int acertou;
+  int nivel;
+  int totaldetentativas;
+  int limitesup;
+
+  // definindo a quantidade de pontos inicial
+  double pontos = 1000;
+
+  printf("digite o limite superior:\n");
+  scanf("%d",&limitesup);
+
+  // gerando um numero secreto aleatorio
+  srand(time(0));
+  int numerosecreto = rand() % limitesup;
+
+  // escolhendo o nivel de dificuldade
+  printf("Qual o nível de dificuldade?\n");
+  printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+  printf("Escolha: ");
+
+  scanf("%d", &nivel);
+
+  switch(nivel) {
+    case 1: 
+      totaldetentativas = 20;
+      break;
+    case 2:
+      totaldetentativas = 15;
+      break;
+    default:
+      totaldetentativas = 6;
+      break;
+  }
+
+  // loop principal do jogo
+  for(int i = 1; i <= totaldetentativas; i++) {
+
+    printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+    printf("Chute um número: ");
+    scanf("%d", &chute);
+
+    // tratando chute de numero negativo
+    if(chute < 0) {
+      printf("Você não pode chutar números negativos\n");
+      i--;
+      continue;
+    }
+
+    // verifica se acertou, foi maior ou menor
+    acertou = chute == numerosecreto;
+
+    if(acertou) {
+      break;
+    } else if(chute > numerosecreto) {
+      printf("\nSeu chute foi maior do que o número secreto!\n\n");
+    } else {
+      printf("\nSeu chute foi menor do que o número secreto!\n\n");
+    }
+
+    // calcula a quantidade de pontos
+    double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+    pontos = pontos - pontosperdidos;
+  }
+
+  // imprimindo mensagem de vitoria ou derrota
+  printf("\n");
+  if(acertou) {
+    printf("             OOOOOOOOOOO               \n");
+    printf("         OOOOOOOOOOOOOOOOOOO           \n");
+    printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+    printf("    OOOOOO      OOOOO      OOOOOO      \n");
+    printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+    printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+    printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+    printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+    printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+    printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+    printf("         OOOOOO         OOOOOO         \n");
+    printf("             OOOOOOOOOOOO              \n");
+    printf("\nParabéns! Você acertou!\n");
+    printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+  } else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+    printf("\nVocê perdeu! Tente novamente!\n\n");
+  }
+
+
+}
+2) Temos ainda alguns números mágicos em nosso código. Use
+#defines para a quantidade de tentativas por níveis.*
+// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVASFACIL 15
+#define NUMERO_DE_TENTATIVASMEDIO 10
+#define NUMERO_DE_TENTATIVASDIFICIL 5
+
+int main() {
+
+  // imprimindo cabecalho bonito do jogo
+  printf("\n\n");
+  printf("          P  /_\\  P                              \n");
+  printf("         /_\\_|_|_/_\\                            \n");
+  printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+  printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+  printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+  printf("    |_____| ' _ ' |_____|                         \n");
+  printf("          \\__|_|__/                              \n");
+  printf("\n\n");
+
+  // declarando variaveis que serao usadas mais a frente
+  int chute;
+  int acertou;
+  int nivel;
+  int totaldetentativas;
+
+  // definindo a quantidade de pontos inicial
+  double pontos = 1000;
+
+  // gerando um numero secreto aleatorio
+  srand(time(0));
+  int numerosecreto = rand() % 100;
+
+  // escolhendo o nivel de dificuldade
+  printf("Qual o nível de dificuldade?\n");
+  printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+  printf("Escolha: ");
+
+  scanf("%d", &nivel);
+
+  switch(nivel) {
+    case 1: 
+      totaldetentativas = NUMERO_DE_TENTATIVASFACIL;
+      break;
+    case 2:
+      totaldetentativas = NUMERO_DE_TENTATIVASMEDIO;
+      break;
+    default:
+      totaldetentativas = NUMERO_DE_TENTATIVASDIFICIL;
+      break;
+  }
+
+  // loop principal do jogo
+  for(int i = 1; i <= totaldetentativas; i++) {
+
+    printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+    printf("Chute um número: ");
+    scanf("%d", &chute);
+
+    // tratando chute de numero negativo
+    if(chute < 0) {
+      printf("Você não pode chutar números negativos\n");
+      i--;
+      continue;
+    }
+
+    // verifica se acertou, foi maior ou menor
+    acertou = chute == numerosecreto;
+
+    if(acertou) {
+      break;
+    } else if(chute > numerosecreto) {
+      printf("\nSeu chute foi maior do que o número secreto!\n\n");
+    } else {
+      printf("\nSeu chute foi menor do que o número secreto!\n\n");
+    }
+
+    // calcula a quantidade de pontos
+    double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+    pontos = pontos - pontosperdidos;
+  }
+
+  // imprimindo mensagem de vitoria ou derrota
+  printf("\n");
+  if(acertou) {
+    printf("             OOOOOOOOOOO               \n");
+    printf("         OOOOOOOOOOOOOOOOOOO           \n");
+    printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+    printf("    OOOOOO      OOOOO      OOOOOO      \n");
+    printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+    printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+    printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+    printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+    printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+    printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+    printf("         OOOOOO         OOOOOO         \n");
+    printf("             OOOOOOOOOOOO              \n");
+    printf("\nParabéns! Você acertou!\n");
+    printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+  } else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+    printf("\nVocê perdeu! Tente novamente!\n\n");
+  }
+
+
+}
+3) Ao terminar uma partida, pergunte para o usuário se ele quer jogar
+novamente. Se ele digitar “1”, significa que quer, então você deverá
+começar o jogo de novo. Para isso, você precisará usar mais um loop.*
+// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+  // imprimindo cabecalho bonito do jogo
+  printf("\n\n");
+  printf("          P  /_\\  P                              \n");
+  printf("         /_\\_|_|_/_\\                            \n");
+  printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+  printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+  printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+  printf("    |_____| ' _ ' |_____|                         \n");
+  printf("          \\__|_|__/                              \n");
+  printf("\n\n");
+
+  // declarando variaveis que serao usadas mais a frente
+  int chute;
+  int acertou;
+  int nivel;
+  int totaldetentativas;
+
+  // definindo a quantidade de pontos inicial
+  double pontos = 1000;
+   while(1){
+  // gerando um numero secreto aleatorio
+  srand(time(0));
+  int numerosecreto = rand() % 100;
+  
+    
+
+  // escolhendo o nivel de dificuldade
+  printf("Qual o nível de dificuldade?\n");
+  printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+  printf("Escolha: ");
+
+  scanf("%d", &nivel);
+
+  switch(nivel) {
+    case 1: 
+      totaldetentativas = 20;
+      break;
+    case 2:
+      totaldetentativas = 15;
+      break;
+    default:
+      totaldetentativas = 6;
+      break;
+  }
+
+  // loop principal do jogo
+  for(int i = 1; i <= totaldetentativas; i++) {
+
+    printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+    printf("Chute um número: ");
+    scanf("%d", &chute);
+
+    // tratando chute de numero negativo
+    if(chute < 0) {
+      printf("Você não pode chutar números negativos\n");
+      i--;
+      continue;
+    }
+
+    // verifica se acertou, foi maior ou menor
+    acertou = chute == numerosecreto;
+
+    if(acertou) {
+      break;
+    } else if(chute > numerosecreto) {
+      printf("\nSeu chute foi maior do que o número secreto!\n\n");
+    } else {
+      printf("\nSeu chute foi menor do que o número secreto!\n\n");
+    }
+
+    // calcula a quantidade de pontos
+    double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+    pontos = pontos - pontosperdidos;
+  }
+
+  // imprimindo mensagem de vitoria ou derrota
+  printf("\n");
+  if(acertou) {
+    printf("             OOOOOOOOOOO               \n");
+    printf("         OOOOOOOOOOOOOOOOOOO           \n");
+    printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+    printf("    OOOOOO      OOOOO      OOOOOO      \n");
+    printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+    printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+    printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+    printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+    printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+    printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+    printf("         OOOOOO         OOOOOO         \n");
+    printf("             OOOOOOOOOOOO              \n");
+    printf("\nParabéns! Você acertou!\n");
+    printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+  } else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+    printf("\nVocê perdeu! Tente novamente!\n\n");
+  }
+  int jogarnovamente;
+printf("digite 1 se deseja jogar novamente\n");
+  scanf("%d",&jogarnovamente);
+  if(jogarnovamente !=1){
+    break;
+  }
+}
+}
+4) Não deixe o usuário jogar o mesmo número na sequência. Se ele
+jogou o número “2”, errou, e jogou novamente o “2”, avise-o de que ele
+já jogou esse número, e não conte como uma tentativa. Para isso, crie
+uma variável que guardará o “último número chutado”. (Não tente
+guardar todos os números chutados nesse momento. Aprenderemos
+como fazer isso mais para frente.)*
+// incluindo as bibliotecas
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+// definindo as constantes
+#define NUMERO_DE_TENTATIVAS 3
+
+int main() {
+
+  // imprimindo cabecalho bonito do jogo
+  printf("\n\n");
+  printf("          P  /_\\  P                              \n");
+  printf("         /_\\_|_|_/_\\                            \n");
+  printf("     n_n | ||. .|| | n_n         Bem vindo ao     \n");
+  printf("     |_|_|nnnn nnnn|_|_|     Jogo de Adivinhação! \n");
+  printf("    |\" \"  |  |_|  |\"  \" |                     \n");
+  printf("    |_____| ' _ ' |_____|                         \n");
+  printf("          \\__|_|__/                              \n");
+  printf("\n\n");
+
+  // declarando variaveis que serao usadas mais a frente
+  int chute;
+  int acertou;
+  int nivel;
+  int totaldetentativas;
+ int ultimonumero;
+  // definindo a quantidade de pontos inicial
+  double pontos = 1000;
+
+  // gerando um numero secreto aleatorio
+  srand(time(0));
+  int numerosecreto = rand() % 100;
+
+  // escolhendo o nivel de dificuldade
+  printf("Qual o nível de dificuldade?\n");
+  printf("(1) Fácil (2) Médio (3) Difícil\n\n");
+  printf("Escolha: ");
+
+  scanf("%d", &nivel);
+
+  switch(nivel) {
+    case 1: 
+      totaldetentativas = 20;
+      break;
+    case 2:
+      totaldetentativas = 15;
+      break;
+    default:
+      totaldetentativas = 6;
+      break;
+  }
+
+  // loop principal do jogo
+  for(int i = 1; i <= totaldetentativas; i++) {
+
+    printf("-> Tentativa %d de %d\n", i, totaldetentativas);
+
+    printf("Chute um número: ");
+    scanf("%d", &chute);
+
+    // tratando chute de numero negativo
+    if(chute < 0) {
+      printf("Você não pode chutar números negativos\n");
+      i--;
+      continue;
+    }
+    if(chute==ultimonumero){
+      printf("vc ja chutou esse numero\n");
+      i--;
+      continue;
+    }
+ ultimonumero=chute;
+    // verifica se acertou, foi maior ou menor
+    acertou = chute == numerosecreto;
+
+    if(acertou) {
+      break;
+    } else if(chute > numerosecreto) {
+      printf("\nSeu chute foi maior do que o número secreto!\n\n");
+    } else {
+      printf("\nSeu chute foi menor do que o número secreto!\n\n");
+    }
+
+    // calcula a quantidade de pontos
+    double pontosperdidos = abs(chute - numerosecreto) / 2.0;
+    pontos = pontos - pontosperdidos;
+  }
+
+  // imprimindo mensagem de vitoria ou derrota
+  printf("\n");
+  if(acertou) {
+    printf("             OOOOOOOOOOO               \n");
+    printf("         OOOOOOOOOOOOOOOOOOO           \n");
+    printf("      OOOOOO  OOOOOOOOO  OOOOOO        \n");
+    printf("    OOOOOO      OOOOO      OOOOOO      \n");
+    printf("  OOOOOOOO  #   OOOOO  #   OOOOOOOO    \n");
+    printf(" OOOOOOOOOO    OOOOOOO    OOOOOOOOOO   \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO  \n");
+    printf("OOOO  OOOOOOOOOOOOOOOOOOOOOOOOO  OOOO  \n");
+    printf(" OOOO  OOOOOOOOOOOOOOOOOOOOOOO  OOOO   \n");
+    printf("  OOOO   OOOOOOOOOOOOOOOOOOOO  OOOO    \n");
+    printf("    OOOOO   OOOOOOOOOOOOOOO   OOOO     \n");
+    printf("      OOOOOO   OOOOOOOOO   OOOOOO      \n");
+    printf("         OOOOOO         OOOOOO         \n");
+    printf("             OOOOOOOOOOOO              \n");
+    printf("\nParabéns! Você acertou!\n");
+    printf("Você fez %.2f pontos. Até a próxima!\n\n", pontos);
+  } else {
+
+        printf("       \\|/ ____ \\|/    \n");   
+        printf("        @~/ ,. \\~@      \n");   
+        printf("       /_( \\__/ )_\\    \n");   
+        printf("          \\__U_/        \n");
+
+    printf("\nVocê perdeu! Tente novamente!\n\n");
+  }
+
+
+}
+1) Escreva um programa que imprima todos os números pares entre 2 e
+50. Para saber se o número é par, basta você ver se o resto da divisão
+do número por 2 é igual a 0.*
+#include<stdio.h>
+int main(){
+  int i;
+  for(i=2;i<=50;i++){
+    if(i%2==0){
+      printf("numero par %d\n",i);
+    }
+  }
+}
+
+2) Escreva um programa que imprima a soma de todos os números de
+1 até 100. Ou seja, ele calculará o resultado de 1 + 2 + 3 + 4 + ... + 100./
+#include<stdio.h>
+int main(){
+   int i,soma=0;
+  for(i=1;i<=100;i++){
+    soma=soma+i;
+    printf("a soma e %d\n",soma);
+    
+  }
+}
+2) Escreva um programa que imprima a soma de todos os números de
+1 até 100. Ou seja, ele calculará o resultado de 1 + 2 + 3 + 4 + ... + 100./
+#include<stdio.h>
+int main(){
+   int i,soma=0;
+  for(i=1;i<=100;i++){
+    soma=soma+i;
+    printf("a soma e %d\n",soma);
+
+  }
+}
+3) Escreva um programa que peça um inteiro ao usuário, e com esse
+inteiro, ele imprima, linha a linha, a tabuada daquele número até o 10.
+Por exemplo, se ele escolher o número 2, o programa imprimirá: 2x1=2,
+2x2=4, 2x3=6, ..., 2x10=20.*
+#include<stdio.h>
+int main(){
+  int i,n;
+  printf("escolha um numero\n");
+  scanf("%d",&n);
+  for(i=1;i<=10;i++){
+    printf("%d x %d = %d \n",n,i,n*i);
+  }
+}
+4) Implemente uma calculadora. O programa deve pedir 3 números ao
+usuário: a, b e operação. Se operação for igual a 1, você deverá
+imprimir a soma de a + b. Se ela for 2, a subtração. Se for 3, a
+multiplicação. Se for 4, a divisão.*
+#include<stdio.h>
+int main(){
+  int a,b,escolha;
+  printf("digite um numero\n");
+  scanf("%d",&a);
+  printf("digite outro numero\n");
+  scanf("%d",&b);
+  printf("digite 1 para soma,2 para subtraçao,3 para multiplicaçao,4 para divisao\n");
+  scanf("%d",&escolha);
+  switch(escolha){
+    case 1:
+    printf("a soma e %d\n",a+b);
+    break;
+    case 2:
+    printf("a subtraçao e %d\n",a-b);
+    break;
+    case 3:
+    printf("a multiplicaçao e %d\n",a*b);
+    break;
+    case 4:
+    printf("a divisao e %d\n",a/b);
+    break;
+    default:
+    printf("opçao invalida\n");
+    break;
+    
+    
+  }
+
+}
+5) Escreva um programa que peça um número inteiro ao usuário e
+imprima o fatorial desse número. Para calcular o fatorial, basta ir
+multiplicando pelos números anteriores até 1. Por exemplo, o fatorial
+de 4 é 4 * 3 * 2 * 1, que é igual a 24.*
+#include<stdio.h>
+int main(){
+int n,i,f=1;
+  printf("digite um numero\n");
+  scanf("%d",&n);
+  if(n<0){
+    printf("numero invalido\n");
+  }else{
+  for(i=1;i<=n;++i){
+    f*=i;
+  }
+    printf(" o fatorial e %d\n",f);
+  }
+  return 0;
+}
+6) Dados três números, imprimi-los em ordem crescente.*/
+/*#include<stdio.h>
+int main(){
+  int a,b,c;
+  printf("digite um numero\n");
+  scanf("%d",&a);
+  printf("digite outro numero\n");
+  scanf("%d",&b);
+  printf("digite outro numero\n");
+  scanf("%d",&c);
+    if(a>b && a>c && b>c){
+    printf("a ordem crescente e %d %d %d \n",a,b,c);
+    } else if(a>b && a>c && c>b){
+      printf("a ordem crescente e %d %d %d \n",a,c,b);
+    } else if(b>a && b>c && a>c){
+      printf("a ordem crescente e %d %d %d \n",b,a,c);
+    } else if(b>a && b>c && c>a){
+      printf("a ordem crescente e %d %d %d \n",b,c,a);
+    } else if(c>a && c>b && a>b){
+      printf("a ordem crescente e %d %d %d \n",c,a,b);
+    } else if(c>a && c>b && b>a){
+      printf("a ordem crescente e %d %d %d \n",c,b,a);
+  }
+  
+  return 0;
+}
+1. Faça um programa que leia um vetor N[20]. A seguir, encontre o menor elemento do vetor N e a sua posição dentro
+do vetor, mostrando: “O menor elemento de N é “, M, “e sua posição dentro do vetor é ", P.
+*/
+/*#include <stdio.h>
+
+int main() {
+    int p[20], menor, posicao;
+
+    
+    for(int i = 0; i < 20; i++) {
+        printf("Digite um numero do vetor %d: ", i + 1);
+        scanf("%d", &p[i]);
+    }
+
+    menor = p[0];
+    posicao = 0;
+        for(int i = 1; i < 20; i++) {
+        if(p[i] < menor) {
+            menor = p[i];
+            posicao = i;
+        }
+    }
+    printf("O menor elemento é %d e sua posição é %d\n", menor, posicao);
+
+    return 0;
+}
+2. Faça um programa que leia um vetor K[30]. Troque a seguir, todos os elementos de ordem ímpar do vetor com os
+elementos de ordem par imediatamente posterior.
+*
+#include<stdio.h>
+int main(){
+  int k[30],temp;
+for(int i=0;i<30;i++){
+  printf("digite um numero\n")
+  scanf("%d",&k[i]);
+    }
+  for(i=0;i<30;i++){
+    if(i%2==0)
+      temp=k[i];
+    k[i]=k[i+1];
+    k[i+1]=temp;
+  }
+  for(i=0;i<30;i++){
+    
+  }
+}
+3. Escreva um programa que leia um vetor de 20 posições e mostre-o. Em seguida, troque o primeiro elemento com o
+último, o segundo com o penúltimo, o terceiro com o antepenúltimo, e assim sucessivamente. Mostre o novo vetor
+depois da troca. Observação: 
+
+
+
