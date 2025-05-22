@@ -1,0 +1,161 @@
+Questao 1
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int aleatorio(int min, int max) {
+return rand() % (max - min + 1) + min;
+}
+int is_sublist(int * const arrayA, int n_size, int * const arrayB, int m_size) {
+if (m_size > n_size) {
+return -1;
+}
+int j;
+for (int i = 0; i <= n_size - m_size; i++) {
+for (j = 0; j < m_size; j++) {
+if (arrayA[i + j] != arrayB[j]) {
+break;
+}
+}
+if (j == m_size) {
+return i;
+}
+}
+return -1;
+}
+int main() {
+int n = 10;
+int m = 3;
+int A[n];
+int B[m];
+srand(time(NULL));
+printf("Vetor A: ");
+for (int i = 0; i < n; i++) {
+A[i] = aleatorio(1, 10);
+
+printf("%d ", A[i]);
+}
+printf("\n");
+printf("Vetor B: ");
+for (int i = 0; i < m; i++) {
+B[i] = aleatorio(1, 10);
+printf("%d ", B[i]);
+}
+printf("\n");
+int pos = is_sublist(A, n, B, m);
+if (pos != -1) {
+printf("B é sublista de A a partir do índice %d.\n", pos);
+} else {
+printf("B não é sublista de A.\n");
+}
+return 0;
+}
+Questao 2:
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int aleatorio(int min, int max) {
+return rand() % (max - min + 1) + min;
+}
+int compute_frequency(int * const arrayA, int n_size, int * const arrayB, int m_size) {
+for (int i = 0; i < m_size; i++) {
+int count = 0;
+for (int j = 0; j < n_size; j++) {
+if (arrayB[i] == arrayA[j]) {
+count++;
+}
+}
+arrayB[i] = count;
+}
+return 0;
+
+}
+int main() {
+int n = 10;
+int m = 5;
+int A[n];
+int B[m];
+srand(time(NULL));
+printf("Vetor A: ");
+for (int i = 0; i < n; i++) {
+A[i] = aleatorio(1, 5);
+printf("%d ", A[i]);
+}
+printf("\n");
+printf("Vetor B antes: ");
+for (int i = 0; i < m; i++) {
+B[i] = aleatorio(1, 5);
+printf("%d ", B[i]);
+}
+printf("\n");
+compute_frequency(A, n, B, m);
+printf("Vetor B depois: ");
+for (int i = 0; i < m; i++) {
+printf("%d ", B[i]);
+}
+printf("\n");
+return 0;
+}
+Questao 3:
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+int aleatorio(int min, int max) {
+return rand() % (max - min + 1) + min;
+}
+
+int compute_frequency(int * const arrayA, int n_size, int * const arrayB, int m_size) {
+for (int i = 0; i < m_size; i++) {
+int count = 0;
+for (int j = 0; j < n_size; j++) {
+if (arrayB[i] == arrayA[j]) {
+count++;
+}
+}
+arrayB[i] = count;
+}
+return 0;
+}
+int contains(int *array, int size, int value) {
+for (int i = 0; i < size; i++) {
+if (array[i] == value) return 1;
+}
+return 0;
+}
+int print_frequency(int * const arrayA, int n_size, int * const arrayB, int m_size) {
+int freq[m_size];
+for (int i = 0; i < m_size; i++) {
+freq[i] = arrayB[i];
+}
+compute_frequency(arrayA, n_size, freq, m_size);
+for (int i = 0; i < m_size; i++) {
+printf("%d: ", arrayB[i]);
+for (int j = 0; j < freq[i]; j++) {
+printf("*");
+}
+printf("\n");
+}
+return 0;
+}
+int main() {
+int n = 10;
+int A[n];
+
+srand(time(NULL));
+for (int i = 0; i < n; i++) {
+A[i] = aleatorio(1, 5);
+}
+int B[n];
+int m = 0;
+for (int i = 0; i < n; i++) {
+if (!contains(B, m, A[i])) {
+B[m++] = A[i];
+}
+}
+printf("Vetor A: ");
+for (int i = 0; i < n; i++) {
+printf("%d ", A[i]);
+}
+printf("\n");
+print_frequency(A, n, B, m);
+return 0;
+}
