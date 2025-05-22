@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+int num1, num2;
+
+printf("Digite o primeiro número: ");
+scanf("%d", &num1);
+
+printf("Digite o segundo número: ");
+scanf("%d", &num2);
+
+int diferenca = num1 - num2;
+
+if (diferenca == 0) {
+    printf("Os números são iguais.\n");
+} else {
+    int negativo = (diferenca & 0x80000000) != 0;
+
+    if (negativo) {
+        printf("O segundo número (%d) é maior.\n", num2);
+    } else {
+        printf("O primeiro número (%d) é maior.\n", num1);
+    }
+}
+
+return 0;
+
+}
